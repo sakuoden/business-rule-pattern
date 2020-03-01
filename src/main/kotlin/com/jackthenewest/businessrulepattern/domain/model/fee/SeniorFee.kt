@@ -7,7 +7,7 @@ import com.jackthenewest.businessrulepattern.domain.type.yen.Yen
  */
 class SeniorFee : Fee {
   companion object {
-    private const val SENIOR_FEE = 500
+    private const val SENIOR_FEE = 600
   }
 
   private val value: Yen
