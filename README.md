@@ -21,7 +21,7 @@ Kotlinによる実装
 このバリエーションを利用して、下記のパターンを表現する。
 
 (具体例)
-- [CustomerType](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/CustomerType.kt)
+- [CustomerType](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/customer/CustomerType.kt)
 
 |顧客区分|
 |---|
@@ -35,6 +35,9 @@ Kotlinによる実装
 |---|---|---|
 |enum値A|値1|値2|
 |enum値B|値3|値4|
+
+（具体例）
+- [FeeType](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/fee/FeeType.kt)
 
 ### ●表形式B 
 
