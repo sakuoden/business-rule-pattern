@@ -17,21 +17,21 @@ Kotlinによる実装
 # パターン集
 
 ## パターン1
-### ・バリエーション
+### ●バリエーション
 このバリエーションを利用して、下記のパターンを表現する。
 
 (具体例)
 - [CustomerType](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/CustomerType.kt)
 
 ## パターン2
-### ・表形式A
+### ●表形式A
 
 | |メソッド名A|メソッド名B|
 |---|---|---|
 |enum値A|値1|値2|
 |enum値B|値3|値4|
 
-### ・表形式B 
+### ●表形式B 
 
 | |enum値A|enum値B|
 |---|---|---|
@@ -39,14 +39,14 @@ Kotlinによる実装
 |enum値D|値3|値4|
 
 ## パターン3
-### ・状態モデルA
+### ●状態モデルA
 
 | |イベントA|イベントB|
 |---|---|---|
 |状態A|値1|値2|
 |状態B|値3|値4|
 
-### ・状態モデルB
+### ●状態モデルB
 
 | |イベントA|イベントB|
 |---|---|---|
@@ -54,12 +54,14 @@ Kotlinによる実装
 |状態B|値3|値4|
 
 ## パターン4
-### ・計算
+### ●計算
+(具体例)
+- [Yen](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/type/yen/Yen.kt)
 
 ## パターン5
-### ・集合
-### ・列
-### ・写像
+### ●集合
+### ●列
+### ●写像
 
 
 
