@@ -23,6 +23,11 @@ Kotlinによる実装
 (具体例)
 - [CustomerType](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/CustomerType.kt)
 
+|顧客区分|
+|---|
+|大人|
+|子供|
+
 ## パターン2
 ### ●表形式A
 
