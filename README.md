@@ -20,6 +20,8 @@ Kotlinによる実装
 ### ・バリエーション
 このバリエーションを利用して、下記のパターンを表現する。
 
+(具体例)
+- [CustomerType](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/CustomerType.kt)
 
 ## パターン2
 ### ・表形式A
