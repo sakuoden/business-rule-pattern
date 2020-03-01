@@ -27,8 +27,17 @@ RDRA2.0による要件定義<br>
 
 |顧客区分|
 |---|
+|シニア|
 |大人|
 |子供|
+
+- [DiscountType](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/discount/DiscountType.kt)
+
+
+|割引区分|
+|---|
+|早朝|
+|深夜|
 
 ## パターン2
 ### ●表形式A
@@ -49,7 +58,7 @@ RDRA2.0による要件定義<br>
 
 ### ●表形式B 
 
-| |enum値A|enum値B|
+||enum値A|enum値B|
 |---|---|---|
 |enum値C|値1|値2|
 |enum値D|値3|値4|
@@ -57,7 +66,7 @@ RDRA2.0による要件定義<br>
 (具体例)
 - [DiscountYen](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/discount/DiscountYen.kt)
 
-| |早朝|深夜|
+|割引額|早朝|深夜|
 |---|---|---|
 |シニア|100|200|
 |大人|50|100|
