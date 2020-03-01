@@ -40,6 +40,12 @@ RDRA2.0による要件定義<br>
 （具体例）
 - [FeeType](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/fee/FeeType.kt)
 
+|料金種別 |yen()|
+|---|---|
+|シニア|600|
+|大人|1000|
+|子供|500|
+
 ### ●表形式B 
 
 | |enum値A|enum値B|
