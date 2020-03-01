@@ -54,6 +54,15 @@ RDRA2.0による要件定義<br>
 |enum値C|値1|値2|
 |enum値D|値3|値4|
 
+(具体例)
+- [DiscountYen](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/discount/DiscountYen.kt)
+
+| |早朝|深夜|
+|---|---|---|
+|シニア|100|200|
+|大人|50|100|
+|子供|150|300|
+
 ## パターン3
 ### ●状態モデルA
 
