@@ -16,11 +16,25 @@ RDRA2.0による要件定義<br>
 　↑   ↓<br>
 実装
 
+# 重要な事
+パターンより前に重要なのはドメイン(ビジネスルール)を発見する事。
+それはすぐに発見できるものではなくリファクタリングを重ねる事で次第に見えてくるもの。
+
+ドメイン(ビジネスルール)の発見には、RDRA2.0やビジネスルールの発見・定義のヒントが役に立つ。
+
 # パターン集
 
-## パターン1
-### ●バリエーション
-このバリエーションを利用して、下記のパターンを表現する。
+## バリエーションの仕様化
+
+まず、ドメイン(ビジネスルール)におけるバリエーションを下記の２つの方法でコードで仕様化する。
+
+### ①バリエーションを入り口で分ける
+2020/03/17 の段階で良さそうなのはアプリケーション層のクラス（当然ドメインモデル、ドメインモデルの集約も分ける）で分けてしまうやり方。
+同じクラス内に同じif文が重複していたらこれを検討した方が良い。
+
+### ②バリエーションをenumを利用して仕様化する
+この段階でバリエーションをenumによって整理することで名前を整理する。
+RDRAのバリエーションは分解する事を検討する。
 
 (具体例)
 - [CustomerType](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/customer/CustomerType.kt)
@@ -33,14 +47,19 @@ RDRA2.0による要件定義<br>
 
 - [DiscountType](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/discount/DiscountType.kt)
 
-
 |割引区分|
 |---|
 |早朝|
 |深夜|
 
-## パターン2
-### ●表形式A
+## パターン1: 表形式
+ドメイン(ビジネスルール)において表形式にまとめられるものは、このパターンで実装する。
+状態モデルも表形式と似ているが状態モデルは、アクセスできる横軸が制限されることに違いがある。
+
+### ●表形式A(enum × メソッド)
+メソッドにより表の値を取得する。
+表形式Bは縦軸も横軸もenumで実装されている場合に使う。
+こちらは横軸はenumで実装されていない場合に利用する。
 
 | |メソッド名A|メソッド名B|
 |---|---|---|
@@ -50,13 +69,14 @@ RDRA2.0による要件定義<br>
 （具体例）
 - [FeeType](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/fee/FeeType.kt)
 
-|料金種別 |yen()|
-|---|---|
-|シニア|600|
-|大人|1000|
-|子供|500|
+|料金種別 |yen()|feeName()|
+|---|---|---|
+|シニア|600|シニア料金|
+|大人|1000|大人料金|
+|子供|500|子供料金|
 
-### ●表形式B 
+### ●表形式B(emum × enum)
+縦軸も横軸もenumで実装されている場合に利用する。
 
 ||enum値A|enum値B|
 |---|---|---|
