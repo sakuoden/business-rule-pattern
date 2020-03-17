@@ -8,7 +8,7 @@ import java.util.*
  * 料金値引き額
  */
 class DiscountYen {
-  val value: EnumMap<CustomerType, EnumMap<DiscountType, Yen>>
+  private val value: EnumMap<CustomerType, EnumMap<DiscountType, Yen>>
 
   init {
     val seniorDiscountYen = EnumMap(mapOf(

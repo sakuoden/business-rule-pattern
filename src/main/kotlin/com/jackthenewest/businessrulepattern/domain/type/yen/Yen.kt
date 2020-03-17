@@ -12,8 +12,6 @@ class Yen(
     const val MIN = 0
     const val MAX = 999999999
   }
-  fun same(yen: Yen): Boolean = value == yen.value()
-
   fun value(): Int = this.value
 
   init {
