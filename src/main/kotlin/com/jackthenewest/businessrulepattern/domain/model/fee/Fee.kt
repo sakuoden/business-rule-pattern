@@ -7,4 +7,6 @@ import com.jackthenewest.businessrulepattern.domain.type.yen.Yen
  */
 interface Fee {
   fun yen(): Yen
+
+  fun feeName(): String
 }

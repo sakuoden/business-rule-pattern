@@ -17,4 +17,6 @@ class SeniorFee : Fee {
   }
 
   override fun yen(): Yen = this.value
+
+  override fun feeName(): String = "シニア料金"
 }

@@ -17,4 +17,6 @@ class ChildFee : Fee {
   }
 
   override fun yen(): Yen = this.value
+
+  override fun feeName(): String = "子供料金"
 }

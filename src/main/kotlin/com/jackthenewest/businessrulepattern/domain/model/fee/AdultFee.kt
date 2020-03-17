@@ -17,4 +17,6 @@ class AdultFee : Fee{
   }
 
   override fun yen(): Yen = this.value
+
+  override fun feeName(): String = "大人料金"
 }
