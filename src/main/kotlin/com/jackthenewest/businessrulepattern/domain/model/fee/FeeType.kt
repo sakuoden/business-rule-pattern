@@ -13,4 +13,6 @@ enum class FeeType(
   CHILD(ChildFee());
 
   fun yen(): Yen = fee.yen()
+
+  fun feeName(): String = fee.feeName()
 }
