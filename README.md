@@ -18,9 +18,16 @@ RDRA2.0による要件定義<br>
 
 # パターン集
 
-## パターン1
-### ●バリエーション
-このバリエーションを利用して、下記のパターンを表現する。
+## パターン1: バリエーション
+
+ドメイン(ビジネスルール)におけるバリエーションを下記の２つの方法でコードで仕様化する。
+
+### ①バリエーションを入り口で分ける
+2020/03/17 の段階で良さそうなのはアプリケーション層のクラス（当然ドメインモデル、ドメインモデルの集約も分ける）で分けてしまうやり方。
+同じクラス内に同じif文が重複していたらこれを検討した方が良い。
+
+### ②バリエーションをenumを利用して仕様化する
+ドメインの１つのバリエーションは複数のenumに分解されるケースが多い。
 
 (具体例)
 - [CustomerType](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/customer/CustomerType.kt)
@@ -33,14 +40,17 @@ RDRA2.0による要件定義<br>
 
 - [DiscountType](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/discount/DiscountType.kt)
 
-
 |割引区分|
 |---|
 |早朝|
 |深夜|
 
-## パターン2
-### ●表形式A
+## パターン2: 表形式
+ドメイン(ビジネスルール)において表形式でまとめられるものを下記の2つの方法で実装する。
+表の交差点の値は全て同じ種類の値にする（例: 可・不可、日数、金額、率など）
+
+### ①表形式A(enum × メソッド)
+1つのenumで表を表現する。
 
 | |メソッド名A|メソッド名B|
 |---|---|---|
@@ -50,13 +60,14 @@ RDRA2.0による要件定義<br>
 （具体例）
 - [FeeType](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/fee/FeeType.kt)
 
-|料金種別 |yen()|
-|---|---|
-|シニア|600|
-|大人|1000|
-|子供|500|
+|料金種別 |yen()|feeName()|
+|---|---|---|
+|シニア|600|シニア料金|
+|大人|1000|大人料金|
+|子供|500|子供料金|
 
-### ●表形式B 
+### ②表形式B(emum × enum)
+縦軸も横軸もenumで実装されている場合に利用する。
 
 ||enum値A|enum値B|
 |---|---|---|
