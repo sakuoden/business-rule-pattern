@@ -68,6 +68,8 @@ RDRA2.0による要件定義<br>
 
 ### ②表形式B(emum × enum)
 縦軸も横軸もenumで実装されている場合に利用する。
+要は下記のような型を表オブジェクトとしてラップする。
+EnumMap<Enum, EnumMap<Enum, ValueObject>>
 
 ||enum値A|enum値B|
 |---|---|---|
