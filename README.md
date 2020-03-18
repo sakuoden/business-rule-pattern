@@ -27,8 +27,7 @@ RDRA2.0による要件定義<br>
 同じクラス内に同じif文が重複していたらこれを検討した方が良い。
 
 ### ②バリエーションをenumを利用して仕様化する
-この段階でバリエーションをenumによって整理することで名前を整理する。
-RDRAのバリエーションは分解する事を検討する。
+ドメインの１つのバリエーションは複数のenumに分解されるケースが多い。
 
 (具体例)
 - [CustomerType](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/customer/CustomerType.kt)
