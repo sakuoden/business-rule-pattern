@@ -6,5 +6,6 @@ package com.jackthenewest.businessrulepattern.domain.model.customer
 enum class CustomerType {
   SENIOR,
   ADULT,
-  CHILD
+  CHILD,
+  SPECIAL
 }

@@ -1,11 +1,13 @@
 package com.jackthenewest.businessrulepattern.domain.model.discount
 
+import com.jackthenewest.businessrulepattern.application.exception.NotFoundMapKeyException
 import com.jackthenewest.businessrulepattern.domain.model.customer.CustomerType
 import com.jackthenewest.businessrulepattern.domain.type.yen.Yen
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 
 internal class DiscountYenTest {
   private lateinit var discountYen: DiscountYen
@@ -136,6 +138,24 @@ internal class DiscountYenTest {
       assertThat(actual)
         .usingRecursiveComparison()
         .isEqualTo(expected)
+    }
+
+    /**
+     * DiscountYenが想定していないCustomerTypeが入った場合はNotFoundMapKeyExceptionを投げる
+     */
+    @Test
+    fun unexpectedCustomerType() {
+      val customerType = CustomerType.SPECIAL
+      val discountType = DiscountType.EARLY_MORNING
+
+      assertThrows<NotFoundMapKeyException> {
+        discountYen.yen(
+          customerType = customerType,
+          discountType = discountType
+        )
+      }.let {
+        println(it.message)
+      }
     }
   }
 }

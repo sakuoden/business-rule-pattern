@@ -1,5 +1,6 @@
 package com.jackthenewest.businessrulepattern.domain.model.discount
 
+import com.jackthenewest.businessrulepattern.application.exception.NotFoundMapKeyException
 import com.jackthenewest.businessrulepattern.domain.model.customer.CustomerType
 import com.jackthenewest.businessrulepattern.domain.type.yen.Yen
 import java.util.*
@@ -26,21 +27,18 @@ class DiscountYen {
       DiscountType.LATE_NIGHT to Yen(300)
     ))
 
-
-    val customerTypeMap = EnumMap(mapOf(
+    this.value = EnumMap(mapOf(
       CustomerType.SENIOR to seniorDiscountYen,
       CustomerType.ADULT to adultDiscountYen,
       CustomerType.CHILD to childDiscountYen
     ))
-
-    this.value = customerTypeMap
   }
 
   fun yen(customerType: CustomerType, discountType: DiscountType): Yen {
     val row = value[customerType]
-      ?: throw IllegalArgumentException("Assigned CustomerType does not exist")
+      ?: throw NotFoundMapKeyException("Assigned customerType(CustomerType.${customerType.name}) is not found in ${this.javaClass} value.")
 
     return row[discountType]
-      ?: throw IllegalArgumentException("Assigned CustomerType does not exist")
+      ?: throw NotFoundMapKeyException("Assigned customerType(CustomerType.${discountType.name}) is not found in ${this.javaClass} value.")
   }
 }
