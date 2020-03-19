@@ -119,6 +119,9 @@ EnumMap<Enum(状態), Set<Enum(状態)>
 
 （具体例）
 
+- [RingiStateTransisions](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/ringi/RingiStateTransitions.kt)
+
+
 ||稟議中|稟議差戻し中|稟議済み|棄却|
 |---|---|---|---|---|
 |稟議中|-|差戻し|決済|棄却|
