@@ -144,8 +144,11 @@ EnumMap<Enum(状態), EnumSet<Enum(状態)>
 |棄却|-|-|-|-|
 
 
-## パターン4
-### ●計算
+## パターン4: 計算式
+エリックエヴァンスのDDDでは、ユビキタス言語とドメインオブジェクトを一致させる事を推奨している。
+
+しかし計算式を表す値オブジェクトは基本的な操作だけの型に分解して、それらの基本操作型をまとめてユビキタス言語の型を作ったりした方が良い。
+
 (具体例)
 - [Yen](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/type/yen/Yen.kt)
 
