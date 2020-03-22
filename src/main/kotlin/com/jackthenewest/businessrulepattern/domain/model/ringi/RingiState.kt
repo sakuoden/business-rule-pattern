@@ -1,6 +1,6 @@
 package com.jackthenewest.businessrulepattern.domain.model.ringi
 
-enum class RingiStatus {
+enum class RingiState {
   UNDER,
   SEND_BACK,
   DECIDED,

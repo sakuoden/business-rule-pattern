@@ -23,8 +23,8 @@ internal class RingiStatusTransitionsTest {
     fun fromUnderToUnderReturnFalse() {
       val actual: Boolean =
         ringiStateTransitions.canTransit(
-          from = RingiStatus.UNDER,
-          to = RingiStatus.UNDER
+          from = RingiState.UNDER,
+          to = RingiState.UNDER
         )
 
       assertThat(actual).isFalse()
@@ -37,8 +37,8 @@ internal class RingiStatusTransitionsTest {
     fun fromUnderToSendBackReturnTrue() {
       val actual: Boolean =
         ringiStateTransitions.canTransit(
-          from = RingiStatus.UNDER,
-          to = RingiStatus.SEND_BACK
+          from = RingiState.UNDER,
+          to = RingiState.SEND_BACK
         )
 
       assertThat(actual).isTrue()
@@ -51,8 +51,8 @@ internal class RingiStatusTransitionsTest {
     fun fromUnderToDecidedReturnTrue() {
       val actual: Boolean =
         ringiStateTransitions.canTransit(
-          from = RingiStatus.UNDER,
-          to = RingiStatus.DECIDED
+          from = RingiState.UNDER,
+          to = RingiState.DECIDED
         )
 
       assertThat(actual).isTrue()
@@ -65,8 +65,8 @@ internal class RingiStatusTransitionsTest {
     fun fromUnderToRejectionReturnTrue() {
       val actual: Boolean =
         ringiStateTransitions.canTransit(
-          from = RingiStatus.UNDER,
-          to = RingiStatus.REJECTION
+          from = RingiState.UNDER,
+          to = RingiState.REJECTION
         )
 
       assertThat(actual).isTrue()
@@ -79,8 +79,8 @@ internal class RingiStatusTransitionsTest {
     fun fromSendBackToUnderReturnTrue() {
       val actual: Boolean =
         ringiStateTransitions.canTransit(
-          from = RingiStatus.SEND_BACK,
-          to = RingiStatus.UNDER
+          from = RingiState.SEND_BACK,
+          to = RingiState.UNDER
         )
 
       assertThat(actual).isTrue()
@@ -93,8 +93,8 @@ internal class RingiStatusTransitionsTest {
     fun fromSendBackToSendBackReturnFalse() {
       val actual: Boolean =
         ringiStateTransitions.canTransit(
-          from = RingiStatus.SEND_BACK,
-          to = RingiStatus.SEND_BACK
+          from = RingiState.SEND_BACK,
+          to = RingiState.SEND_BACK
         )
 
       assertThat(actual).isFalse()
@@ -107,8 +107,8 @@ internal class RingiStatusTransitionsTest {
     fun fromSendBackToDecidedReturnFalse() {
       val actual: Boolean =
         ringiStateTransitions.canTransit(
-          from = RingiStatus.SEND_BACK,
-          to = RingiStatus.DECIDED
+          from = RingiState.SEND_BACK,
+          to = RingiState.DECIDED
         )
 
       assertThat(actual).isFalse()
@@ -121,8 +121,8 @@ internal class RingiStatusTransitionsTest {
     fun fromSendBackToRejectionReturnFalse() {
       val actual: Boolean =
         ringiStateTransitions.canTransit(
-          from = RingiStatus.SEND_BACK,
-          to = RingiStatus.REJECTION
+          from = RingiState.SEND_BACK,
+          to = RingiState.REJECTION
         )
 
       assertThat(actual).isFalse()
@@ -135,8 +135,8 @@ internal class RingiStatusTransitionsTest {
     fun fromDecidedToUnderReturnFalse() {
       val actual: Boolean =
         ringiStateTransitions.canTransit(
-          from = RingiStatus.DECIDED,
-          to = RingiStatus.UNDER
+          from = RingiState.DECIDED,
+          to = RingiState.UNDER
         )
 
       assertThat(actual).isFalse()
@@ -149,8 +149,8 @@ internal class RingiStatusTransitionsTest {
     fun fromRejectionToSendBackReturnFalse() {
       val actual: Boolean =
         ringiStateTransitions.canTransit(
-          from = RingiStatus.REJECTION,
-          to = RingiStatus.SEND_BACK
+          from = RingiState.REJECTION,
+          to = RingiState.SEND_BACK
         )
 
       assertThat(actual).isFalse()
