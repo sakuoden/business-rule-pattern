@@ -109,6 +109,8 @@ EnumMap<Enum(状態), EnumSet<Enum(イベント)>>
 
 （具体例）
 
+- [LockerStateTransitions](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/locker/LockerStateTransitions.kt)
+
 | |イベントセット|
 |---|---|
 |空|確保|
@@ -131,7 +133,7 @@ EnumMap<Enum(状態), EnumSet<Enum(状態)>
 
 （具体例）
 
-- [RingiStateTransisions](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/ringi/RingiStateTransitions.kt)
+- [RingiStateTransitions](https://github.com/sakuoden/business-rule-pattern/blob/master/src/main/kotlin/com/jackthenewest/businessrulepattern/domain/model/ringi/RingiStateTransitions.kt)
 
 
 ||稟議中|稟議差戻し中|稟議済み|棄却|
