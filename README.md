@@ -100,7 +100,7 @@ EnumMap<Enum, EnumMap<Enum, ValueObject>>
 
 
 ### ①状態モデルA
-EnumMap<Enum(状態), Set<Enum(イベント)>>
+EnumMap<Enum(状態), EnumSet<Enum(イベント)>>
 
 | |イベントセット|
 |---|---|
@@ -117,7 +117,7 @@ EnumMap<Enum(状態), Set<Enum(イベント)>>
 
 
 ### ②状態モデルB
-EnumMap<Enum(状態), Set<Enum(状態)>
+EnumMap<Enum(状態), EnumSet<Enum(状態)>
 
 ある状態から、あるイベントを起因として別の状態に遷移できるかどうかを表す。
 
